@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(45deg, rgba(240, 140, 240, 0.621), rgba(225, 166, 225, 0.495)), center, center/cover , no-repeat;
+}
+
+#bubble-bg{
+    position: absolute;
+    width: 40%;
+    height: 55%;
+    bottom: 0%;
+    left: -5%;
+    background: url('assets/bubbles.png') center no-repeat;
+    z-index: -1;
+}
+
+#navbar{
+    width: 100%;
+    height: 5dvh;
+    display: flex;
+    padding: 3px 8px;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#4e114669 ;
+}
+
+#navbar a{
+    text-decoration: none;
+}
+
+#game-square{
+    width: 60%;
+    height: 70vh;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.6);
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#game-top{
+    width: 100%;
+    height: 12%;
+    background-color: rgba(128, 0, 128, 0.648);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#hit, #timer, #score{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+#game-top .value{
+    border: 1px solid rgb(244, 234, 234);
+    border-radius: 3px;
+    background-color: aliceblue;
+    height: 30px;
+    width: 45px;
+    display: grid;
+    place-items: center;
+}
+
+#game-bottom{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    gap: 13px;
+}
+
+#game-bottom .bubble{
+    display: grid;
+    place-items: center;
+    height: 50px;
+    aspect-ratio: 1/1;
+    border: 0.1px solid purple;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgba(239, 200, 239, 0.479);
+}
+
+#game-bottom .bubble:hover{
+    background-color: rgba(239, 200, 239, 0.679);   
+}
+
+#reset-container{
+    padding: 15% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+#reset-container #game-over{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 1000;
+    font-size: 2.5rem;
+    font-style: oblique;
+}
+
+#reset-container button{
+    padding: 10px;
+    background: rgb(187, 100, 187);
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#reset-container #highscore{
+    font-size: 1.8rem;
+}
+
+@media screen and (max-width: 480px)  {
+    
+    #game-square{
+        width: 100%;
+    }
+
+}
