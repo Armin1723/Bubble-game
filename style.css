@@ -40,6 +40,23 @@ html, body{
     background-color:#4e114669 ;
 }
 
+#navbar .details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.details p{
+    font-weight: 700;
+    font-size: 1.3rem
+}
+
+#navbar img{
+    height: 30px;
+}
+
 #navbar a{
     text-decoration: none;
 }
@@ -122,7 +139,7 @@ html, body{
     font-style: oblique;
 }
 
-#reset-container button{
+#reset-container button, #game-bottom button{
     padding: 10px;
     background: rgb(187, 100, 187);
     border: none;
@@ -130,6 +147,15 @@ html, body{
     border-radius: 15px;
     font-size: 12px;
     font-weight: 600;
+}
+
+#game-bottom button{
+    padding: 13px;
+    margin: 20%;
+}
+
+#game-bottom button:hover{
+    background-color: rgb(184, 86, 184);
 }
 
 #footer{
@@ -149,6 +175,16 @@ html, body{
     
     #game-square{
         width: 100%;
+    }
+
+    #container{
+        overflow: hidden;
+    }
+
+    #bubble-bg{
+        background: url('assets/bubbles.png') center center/cover;
+        height: 100vh;
+        width: 120vw;
     }
 
 }

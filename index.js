@@ -3,10 +3,11 @@ const hit = document.querySelector('#hit-value');
 const correctClick = new Audio('assets/correctClick.wav');
 const wrongClick = new Audio('assets/wrongClick.wav');
 const gameover = new Audio('assets/gameover.wav');
+const clickSound = new Audio('assets/click.wav');
 
 let hitValue = 0;
 let scoreValue = 0;
-let timerValue = 60;
+let timerValue = 6;
 let highScore = localStorage.getItem('highscore');
 const populateGameBox = () => {
     bubbleHTML = ''
@@ -19,7 +20,7 @@ const populateGameBox = () => {
     hit.innerText = hitValue;
 }
 
-const timer = 
+const timer = () =>{
     setInterval(() => {
         if( timerValue > 0){
             --timerValue;
@@ -30,12 +31,14 @@ const timer =
             gameover.play();
             gameBottom.innerHTML = `<div id='reset-container'>
                                         <div id='game-over'>GAME OVER</div>
-                                        <button id='new-game' onClick=location.reload()>NEW GAME</button>
+                                        <button id='new-game' onClick=window.location.reload()>RESET BOARD</button>
                                         <div id='highscore'>High Score: ${highScore}</div> 
                                     </div>`;
             clearInterval(timer);
         }
     }, 1000);
+}
+
 
 gameBottom.addEventListener('click', (e)=>{
     if ( timerValue > 0 && e.target.innerText >= 0){
@@ -53,4 +56,11 @@ gameBottom.addEventListener('click', (e)=>{
     }
 })
 
-populateGameBox();
+newGame =()=>{
+    populateGameBox();
+    timer();
+}
+
+document.querySelector('#container').addEventListener('click', ()=>{
+    clickSound.play();
+})
