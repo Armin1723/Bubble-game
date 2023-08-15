@@ -7,7 +7,7 @@ const clickSound = new Audio('assets/click.wav');
 
 let hitValue = 0;
 let scoreValue = 0;
-let timerValue = 6;
+let timerValue = 60;
 let highScore = localStorage.getItem('highscore');
 const populateGameBox = () => {
     bubbleHTML = ''
