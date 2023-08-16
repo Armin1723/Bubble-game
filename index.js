@@ -31,7 +31,7 @@ const timer = () =>{
             gameover.play();
             gameBottom.innerHTML = `<div id='reset-container'>
                                         <div id='game-over'>GAME OVER</div>
-                                        <button id='new-game' onClick=window.location.reload()>RESET BOARD</button>
+                                        <button id='new-game' class="click" onClick=window.location.reload()>RESET BOARD</button>
                                         <div id='highscore'>High Score: ${highScore}</div> 
                                     </div>`;
             clearInterval(timer);
@@ -61,6 +61,6 @@ newGame =()=>{
     timer();
 }
 
-document.querySelector('#container').addEventListener('click', ()=>{
+document.querySelector('.click').addEventListener('click', ()=>{
     clickSound.play();
 })
