@@ -64,3 +64,10 @@ newGame =()=>{
 document.querySelector('.click').addEventListener('click', ()=>{
     clickSound.play();
 })
+
+
+document.addEventListener('mousemove', function(e){
+    console.log(e)
+    document.querySelector('#mouseFollower').style.left = (e.pageX + 5) + 'px'
+    document.querySelector('#mouseFollower').style.top = (e.pageY - 5) + 'px'
+})
