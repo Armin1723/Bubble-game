@@ -222,6 +222,10 @@ html, body{
         overflow: hidden;
     }
 
+    #mouseFollower{
+        display: none;
+    }
+
     #bubble-bg{
         background: url('assets/bubbles.png') center center/cover;
         height: 100vh;
